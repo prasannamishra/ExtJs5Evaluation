@@ -1,0 +1,19 @@
+{
+  "name": "TestTheme",
+  "format": "1",
+  "version": "1.0.0",
+  "creator": "Kali",
+  "summary": "Short summary",
+  "detailedDescription": "Long description of package",
+  "type": "theme",
+  "extend": "ext-theme-aria",
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "output": "${package.dir}/build"
+}

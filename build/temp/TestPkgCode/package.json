@@ -1,0 +1,18 @@
+{
+  "name": "TestPkgCode",
+  "format": "1",
+  "version": "1.0.0",
+  "creator": "Kali",
+  "summary": "Short summary",
+  "detailedDescription": "Long description of package",
+  "type": "code",
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "output": "${package.dir}/build"
+}
