@@ -1,6 +1,6 @@
-Ext Js 5 Evaluation Sample Application
-=======================================
-This application showcases few of the important and interesting new features of Ext Js 5.<br>
+Ext Js 5 Evaluation Sample Application + Karma + Jasmine
+=========================================================
+This application showcases few of interesting new features of Ext Js 5.<br>
 
 Pre-Requisites:
 ================
@@ -50,10 +50,12 @@ The sample application contains few of the interesting features of Ext Js 5. The
 <li>Custom Field type for a model</li>
 <li>ViewModel and ViewController definitions </li>
 <li>Ext.toast() </li>
+<li>Breadcrumb widget </li>li>
 <li> and some others as well </li>
 </ol>
 
 Sample unit test cases are written using Jasmine 2.0. <br>
 Unit test cases are written for models, controllers and views.<br>
-Unit test cases can be found inside "test-specs" inside the TestApp application.
+Unit test cases can be found inside "test-specs" inside the TestApp application.<br>
+Unit test cases covers testing for View, ViewModel and ViewController.<br>
 

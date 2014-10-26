@@ -49,7 +49,6 @@ Ext.define('App.controller.RouteController', {
 
 	checkUserSession: function(action) {
 		try {
-			debugger;
 			var userInfo = JSON.parse(localStorage.getItem('userInfo'));
 			if (userInfo) {
 				action.resume();

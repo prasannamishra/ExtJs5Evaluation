@@ -4,7 +4,8 @@ Ext.define('App.view.main.Main', {
     requires: [
         'App.view.main.MainController',
         'App.view.userRegistration.Registration',
-        'App.view.grid.SampleGrid'
+        'App.view.grid.SampleGrid',
+        'App.view.association.Association'
     ],
 
     xtype: 'app-main',
@@ -19,50 +20,72 @@ Ext.define('App.view.main.Main', {
 
 
 
-    items: [{
-        xtype: 'tabpanel',
-        region: 'center',
+    initComponent: function() {
+        var breadCrumbStore = Ext.create('App.store.BreadCrumb');
 
-        plugins: 'responsive',
-        tabBar: {
-            layout: {
-                pack: 'center'
-            }
-        },
-        defaults: {
-            iconAlign: 'top',
-            bodyPadding: 15
-        },
-        responsiveFormulas: {
-            tall: 'height > width',
+        this.tbar = [];
 
-            wide: 'width > height',
+        this.items = [{
+            xtype: 'tabpanel',
+            region: 'center',
+            plugins: 'responsive',
+            listeners: {
+                beforetabchange: 'mainPanelTabChange'
+            },
+            tabBar: {
+                layout: {
+                    pack: 'center'
+                }
+            },
+            defaults: {
+                iconAlign: 'top',
+                bodyPadding: 15
+            },
+            responsiveFormulas: {
+                tall: 'height > width',
 
-        },
-        responsiveConfig: {
-            wide: {
-                tabPosition: 'top',
+                wide: 'width > height',
+
+            },
+            responsiveConfig: {
+                wide: {
+                    tabPosition: 'top',
+                },
+
+                tall: {
+                    tabPosition: 'bottom'
+                }
             },
 
-            tall: {
-                tabPosition: 'bottom'
-            }
-        },
+            tbar: [{
+                xtype: 'breadcrumb',
+                store: breadCrumbStore,
+                showIcons: true,
+                selection: breadCrumbStore.getRoot().childNodes[0],
+                listeners: {
+                    selectionchange: 'breadcrumbSelectionChange'
+                }
+            }, '->', {
+                xtype: 'button',
+                text: 'Logout',
+                iconAlign: 'right',
+                glyph: 0xf192,
+                listeners: {
+                    click: 'doLogOut'
+                }
+            }],
+            items: [{
+                xtype: 'app-registration'
+            }, {
+                xtype: 'app-sample-grid'
+            }, {
+                xtype: 'app-association'
+            }]
 
-        tbar: ['->', {
-            xtype: 'button',
-            text: 'Logout',
-            iconAlign: 'right',
-            glyph: 0xf192,
-            listeners: {
-                click: 'doLogOut'
-            }
-        }],
-        items: [{
-            xtype: 'app-registration'
-        }, {
-            xtype: 'app-sample-grid'
-        }]
+        }];
 
-    }]
+
+        this.callParent();
+    }
+
 });

@@ -40,5 +40,13 @@ Ext.define('App.model.registration.Registration', {
     }, {
         name: 'contactAddress',
         type: 'address'
-    }]
+    }],
+    proxy: {
+        url: 'data/userData.json',
+        type: 'ajax',
+        reader: {
+            type: 'json',
+            rootProperty: 'users'
+        }
+    }
 });
