@@ -50,7 +50,7 @@ The sample application contains few of the interesting features of Ext Js 5. The
 <li>Custom Field type for a model</li>
 <li>ViewModel and ViewController definitions </li>
 <li>Ext.toast() </li>
-<li>Breadcrumb widget </li>li>
+<li>Breadcrumb widget </li>
 <li> and some others as well </li>
 </ol>
 
