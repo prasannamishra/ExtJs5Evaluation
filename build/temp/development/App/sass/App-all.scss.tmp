@@ -1,14 +1,17 @@
-$image-search-path: '/Users/pmishra/Documents/softwares/apache-tomcat-7.0.55/webapps/workspace/ExtWorkSpace/TestWs/build/development/App/resources';
+$image-search-path: '/Users/pmishra/Documents/softwares/apache-tomcat-7.0.55/webapps/workspace/ExtWorkSpace/ExtJs5Evaluation/build/development/App/resources';
 $theme-name:  'ext-theme-neptune' !default;
 $include-app-application: true;
 $include-app-controller-routecontroller: true;
 $include-app-fields-address: true;
 $include-app-model-basemodel: true;
 $include-app-model-login-login: true;
+$include-app-model-registration-order: true;
 $include-app-model-registration-registration: true;
 $include-app-model-sample-sample: true;
+$include-app-store-breadcrumb: true;
 $include-app-store-samplegrid-samplegrid: true;
 $include-app-view-viewport: true;
+$include-app-view-association-association: true;
 $include-app-view-grid-samplegrid: true;
 $include-app-view-login-login: true;
 $include-app-view-login-logincontroller: true;
